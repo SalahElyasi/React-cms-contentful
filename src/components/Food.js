@@ -1,20 +1,16 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
+import React from "react";
+import { useParams } from "react-router-dom";
+import Post from "./Post";
 
-// const Students = ({ articles }) => {
-//   return (
-//     <dispatchEvent>
-//       <ul>
-//         {articles.map((article) => (
-//           <li key={`${article}`}>
-//             <Link to={`/students/${student.name.first}-${student.name.last}`}>
-//               {student.name.title} {student.name.first} {student.name.last}
-//             </Link>
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// };
+const Food = ({ posts }) => {
+  const { slug } = useParams();
+  const post = posts.find((e) => e.fields.slug === slug);
+  console.log(post);
+  return (
+    <div className="flexbox">
+      <div>{post && <Post article={post} />}</div>
+    </div>
+  );
+};
 
-// export default Students;
+export default Food;
