@@ -76,7 +76,7 @@ header {
 
 .wrapper {
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   padding: 0 10px;
   margin: auto;
 }
@@ -117,4 +117,41 @@ main .wrapper {
   text-transform: uppercase;
   font-size: 1.8em;
   color: #f32e67;
+}
+
+.loading {
+  color: #f35626;
+  animation: blabla 1s;
+}
+@keyframes blabla {
+  0% {
+    background-color: #39f;
+  }
+  15% {
+    background-color: #8bc5d1;
+  }
+  30% {
+    background-color: #f8cb4a;
+  }
+  45% {
+    background-color: #95b850;
+  }
+  60% {
+    background-color: #944893;
+  }
+  75% {
+    background-color: #c71f00;
+  }
+  90% {
+    background-color: #bdb280;
+  }
+  100% {
+    background-color: #39f;
+  }
+}
+
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
