@@ -12,7 +12,11 @@ import Food from "./components/Food";
 import "./App.css";
 import { client } from "./Client";
 import Posts from "./components/Posts";
+
+import Blogposts from "./components/Blogposts"
+
 import { FiLoader } from "react-icons/fi";
+
 
 class App extends React.Component {
   state = {
@@ -47,6 +51,7 @@ class App extends React.Component {
           <NavLink to="/">Home</NavLink>
           <NavLink to="/Contact">Contact</NavLink>
           <NavLink to="/About">About</NavLink>
+          <NavLink to="/Blogposts">Blog</NavLink>
         </nav>
         <ul>
           {this.state.articles.map((article, index) => (
@@ -65,7 +70,18 @@ class App extends React.Component {
           <Route exact path="/About">
             <About />
           </Route>
+
           <Route exact path="/">
+
+          <Route path="/Blogposts">
+            <Blogposts />
+
+          <Route path="/Food">
+            <Food posts={this.state.articles} />
+
+          </Route>
+          <Route path="/">
+
             <div className="App">
               <div className="container">
                 <header>
