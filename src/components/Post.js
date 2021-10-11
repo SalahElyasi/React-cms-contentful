@@ -7,7 +7,7 @@ const Post = ({ article }) => {
   const { name, image, description, slug } = article.fields;
   const postDescription = marked(description);
   return (
-    <Link to={`/Contact/${slug}`}>
+    <Link to={`/Food/${slug}`}>
       <div id={slug} className={`post`}>
         <h2 className="title">{name}</h2>
         {image && (

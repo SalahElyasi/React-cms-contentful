@@ -56,19 +56,16 @@ class App extends React.Component {
           ))}
         </ul>
         <Switch>
-          <Route path="/Contact/:slug">
-            <Contact posts={this.state.articles} />
+          <Route exact path="/Food/:slug">
+            <Food posts={this.state.articles} />
           </Route>
-          <Route path="/Contact">
+          <Route exact path="/Contact">
             <Contact />
           </Route>
-          <Route path="/About">
+          <Route exact path="/About">
             <About />
           </Route>
-          <Route path="/Food">
-            {/* <Food posts={this.state.articles} /> */}
-          </Route>
-          <Route path="/">
+          <Route exact path="/">
             <div className="App">
               <div className="container">
                 <header>
