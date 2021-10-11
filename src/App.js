@@ -13,10 +13,9 @@ import "./App.css";
 import { client } from "./Client";
 import Posts from "./components/Posts";
 
-import Blogposts from "./components/Blogposts"
+import Blogposts from "./components/Blogposts";
 
 import { FiLoader } from "react-icons/fi";
-
 
 class App extends React.Component {
   state = {
@@ -71,38 +70,33 @@ class App extends React.Component {
             <About />
           </Route>
 
-          <Route exact path="/">
+          <Route exact path="/" />
 
           <Route path="/Blogposts">
             <Blogposts />
-
+          </Route>
           <Route path="/Food">
             <Food posts={this.state.articles} />
-
           </Route>
-          <Route path="/">
 
-            <div className="App">
-              <div className="container">
-                <header>
-                  <div className="wrapper">
-                    <span className="logo">
-                      Foodia{" "}
-                      {!this.state.isLoading && (
-                        <FiLoader className="loading" />
-                      )}
-                    </span>
-                  </div>
-                </header>
-                <main>
-                  <div className="wrapper">
-                    <Posts posts={this.state.articles} />
-                    {console.log("------>", this.state.articles[1])}
-                  </div>
-                </main>
-              </div>
+          <div className="App">
+            <div className="container">
+              <header>
+                <div className="wrapper">
+                  <span className="logo">
+                    Foodia{" "}
+                    {!this.state.isLoading && <FiLoader className="loading" />}
+                  </span>
+                </div>
+              </header>
+              <main>
+                <div className="wrapper">
+                  <Posts posts={this.state.articles} />
+                  {console.log("------>", this.state.articles[1])}
+                </div>
+              </main>
             </div>
-          </Route>
+          </div>
         </Switch>
       </Router>
     );
