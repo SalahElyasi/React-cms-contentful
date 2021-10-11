@@ -57,7 +57,7 @@ class App extends React.Component {
         </ul>
         <Switch>
           <Route path="/Contact/:slug">
-            <Contact />
+            <Contact posts={this.state.articles} />
           </Route>
           <Route path="/Contact">
             <Contact />
@@ -66,7 +66,7 @@ class App extends React.Component {
             <About />
           </Route>
           <Route path="/Food">
-            <Food posts={this.state.articles} />
+            {/* <Food posts={this.state.articles} /> */}
           </Route>
           <Route path="/">
             <div className="App">
