@@ -10,7 +10,7 @@ body {
   color: #455;
   line-height: 1.5;
   font-family: "Muli", sans-serif;
-  background-color: blueviolet;
+  background-color: rgb(210, 179, 238);
   background-image: url(./images/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -154,4 +154,11 @@ main .wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin-bottom: 50%;
+}
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 50%;
 }

@@ -16,6 +16,8 @@ import Posts from "./components/Posts";
 import Blogposts from "./components/Blogposts";
 
 import { FiLoader } from "react-icons/fi";
+import Footer from './components/Footer';
+
 
 class App extends React.Component {
   state = {
@@ -99,7 +101,9 @@ class App extends React.Component {
           </div>
           </Route>
         </Switch>
+        <Footer />
       </Router>
+       
     );
   }
 }
