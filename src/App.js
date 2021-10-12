@@ -52,13 +52,7 @@ class App extends React.Component {
           <NavLink to="/About">About</NavLink>
           <NavLink to="/Blogposts">Blog</NavLink>
         </nav>
-        <ul>
-          {this.state.articles.map((article, index) => (
-            <li key={index}>
-              <a href={`#${article.fields.slug}`}>{article.fields.name}</a>
-            </li>
-          ))}
-        </ul>
+       
         <Switch>
           <Route exact path="/Food/:slug">
             <Food posts={this.state.articles} />
@@ -70,7 +64,6 @@ class App extends React.Component {
             <About />
           </Route>
 
-          <Route exact path="/" />
 
           <Route path="/Blogposts">
             <Blogposts />
@@ -78,8 +71,15 @@ class App extends React.Component {
           <Route path="/Food">
             <Food posts={this.state.articles} />
           </Route>
-
+          <Route exact path="/">
           <div className="App">
+          <ul>
+          {this.state.articles.map((article, index) => (
+            <li key={index}>
+              <a href={`#${article.fields.slug}`}>{article.fields.name}</a>
+            </li>
+          ))}
+        </ul>
             <div className="container">
               <header>
                 <div className="wrapper">
@@ -97,6 +97,7 @@ class App extends React.Component {
               </main>
             </div>
           </div>
+          </Route>
         </Switch>
       </Router>
     );
