@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Box = styled.div`
-padding: 5px 1px;
+padding: 5px 5px;
 background: gray;
 
 

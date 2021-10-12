@@ -151,6 +151,13 @@ main .wrapper {
 }
 
 .flexbox {
+  max-width: 1000px;
+  max-height: 1000px;
+  margin-left: 15%;
+  margin-top: 1%;
+}
+
+.flexbox1 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -161,4 +168,15 @@ main .wrapper {
   flex-direction: row;
   justify-content: space-around;
   margin-bottom: 50%;
+}
+
+.ull {
+  display: flex;
+  justify-content: space-around;
+}
+
+.lii {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }

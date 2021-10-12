@@ -4,19 +4,18 @@ import {
   Switch,
   Route,
   NavLink,
-  Link,
 } from "react-router-dom";
 import Contact from "./components/Contact";
 import About from "./components/About";
 import Food from "./components/Food";
+import Home from "./components/Home";
 import "./App.css";
 import { client } from "./Client";
-import Posts from "./components/Posts";
 
 import Blogposts from "./components/Blogposts";
-
-import { FiLoader } from "react-icons/fi";
 import Footer from './components/Footer';
+
+
 
 
 class App extends React.Component {
@@ -54,7 +53,7 @@ class App extends React.Component {
           <NavLink to="/About">About</NavLink>
           <NavLink to="/Blogposts">Blog</NavLink>
         </nav>
-       
+
         <Switch>
           <Route exact path="/Food/:slug">
             <Food posts={this.state.articles} />
@@ -65,8 +64,6 @@ class App extends React.Component {
           <Route exact path="/About">
             <About />
           </Route>
-
-
           <Route path="/Blogposts">
             <Blogposts />
           </Route>
@@ -74,31 +71,10 @@ class App extends React.Component {
             <Food posts={this.state.articles} />
           </Route>
           <Route exact path="/">
-          <div className="App">
-          <ul>
-          {this.state.articles.map((article, index) => (
-            <li key={index}>
-              <a href={`#${article.fields.slug}`}>{article.fields.name}</a>
-            </li>
-          ))}
-        </ul>
-            <div className="container">
-              <header>
-                <div className="wrapper">
-                  <span className="logo">
-                    Foodia{" "}
-                    {!this.state.isLoading && <FiLoader className="loading" />}
-                  </span>
-                </div>
-              </header>
-              <main>
-                <div className="wrapper">
-                  <Posts posts={this.state.articles} />
-                  {console.log("------>", this.state.articles[1])}
-                </div>
-              </main>
-            </div>
-          </div>
+            <Home
+              isLoading={this.state.isLoading}
+              articles={this.state.articles}
+            />
           </Route>
         </Switch>
         <Footer />
@@ -109,3 +85,5 @@ class App extends React.Component {
 }
 
 export default App;
+
+// comment
