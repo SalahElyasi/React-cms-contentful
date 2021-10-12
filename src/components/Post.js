@@ -18,7 +18,6 @@ const Post = ({ article }) => {
             title={name}
           />
         )}
-        <section dangerouslySetInnerHTML={{ __html: postDescription }} />
       </div>
     </Link>
   );

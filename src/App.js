@@ -12,6 +12,9 @@ import Food from "./components/Food";
 import "./App.css";
 import { client } from "./Client";
 import Posts from "./components/Posts";
+
+import Blogposts from "./components/Blogposts";
+
 import { FiLoader } from "react-icons/fi";
 
 class App extends React.Component {
@@ -47,14 +50,9 @@ class App extends React.Component {
           <NavLink to="/">Home</NavLink>
           <NavLink to="/Contact">Contact</NavLink>
           <NavLink to="/About">About</NavLink>
+          <NavLink to="/Blogposts">Blog</NavLink>
         </nav>
-        <ul>
-          {this.state.articles.map((article, index) => (
-            <li key={index}>
-              <a href={`#${article.fields.slug}`}>{article.fields.name}</a>
-            </li>
-          ))}
-        </ul>
+       
         <Switch>
           <Route exact path="/Food/:slug">
             <Food posts={this.state.articles} />
@@ -65,27 +63,40 @@ class App extends React.Component {
           <Route exact path="/About">
             <About />
           </Route>
+
+
+          <Route path="/Blogposts">
+            <Blogposts />
+          </Route>
+          <Route path="/Food">
+            <Food posts={this.state.articles} />
+          </Route>
           <Route exact path="/">
-            <div className="App">
-              <div className="container">
-                <header>
-                  <div className="wrapper">
-                    <span className="logo">
-                      Foodia{" "}
-                      {!this.state.isLoading && (
-                        <FiLoader className="loading" />
-                      )}
-                    </span>
-                  </div>
-                </header>
-                <main>
-                  <div className="wrapper">
-                    <Posts posts={this.state.articles} />
-                    {console.log("------>", this.state.articles[1])}
-                  </div>
-                </main>
-              </div>
+          <div className="App">
+          <ul>
+          {this.state.articles.map((article, index) => (
+            <li key={index}>
+              <a href={`#${article.fields.slug}`}>{article.fields.name}</a>
+            </li>
+          ))}
+        </ul>
+            <div className="container">
+              <header>
+                <div className="wrapper">
+                  <span className="logo">
+                    Foodia{" "}
+                    {!this.state.isLoading && <FiLoader className="loading" />}
+                  </span>
+                </div>
+              </header>
+              <main>
+                <div className="wrapper">
+                  <Posts posts={this.state.articles} />
+                  {console.log("------>", this.state.articles[1])}
+                </div>
+              </main>
             </div>
+          </div>
           </Route>
         </Switch>
       </Router>
