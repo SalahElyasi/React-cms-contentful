@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Post from "./Post";
+import PostDiscription from "./PostDiscription";
 
 const Food = ({ posts }) => {
   const { slug } = useParams();
@@ -8,7 +8,7 @@ const Food = ({ posts }) => {
   console.log(post);
   return (
     <div className="flexbox">
-      <div>{post && <Post article={post} />}</div>
+      <div>{post && <PostDiscription article={post} />}</div>
     </div>
   );
 };

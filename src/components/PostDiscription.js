@@ -2,9 +2,9 @@ import React from "react";
 // import marked from "marked";
 import { Link } from "react-router-dom";
 
-const Post = ({ article }) => {
+const PostDiscription = ({ article }) => {
   console.log(article);
-  const { name, image, slug } = article.fields;
+  const { name, image, description, slug } = article.fields;
   // const postDescription = marked(description);
   return (
     <Link to={`/Food/${slug}`}>
@@ -18,9 +18,10 @@ const Post = ({ article }) => {
             title={name}
           />
         )}
+        {description}
       </div>
     </Link>
   );
 };
 
-export default Post;
+export default PostDiscription;
