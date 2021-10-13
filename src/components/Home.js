@@ -7,14 +7,6 @@ const Home = ({ articles, isLoading }) => {
   console.log(isLoading);
   return (
     <div className="App">
-      <ul>
-        {articles &&
-          articles.map((article, index) => (
-            <li key={index}>
-              <a href={`#${article.fields.slug}`}>{article.fields.name}</a>
-            </li>
-          ))}
-      </ul>
       <div className="container">
         <header>
           <div className="wrapper">

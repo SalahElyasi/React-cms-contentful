@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 import Contact from "./components/Contact";
 import About from "./components/About";
+
+import Navbar from "./components/Navbar";
 import Food from "./components/Food";
 import Home from "./components/Home";
 import "./App.css";
@@ -49,7 +51,7 @@ class App extends React.Component {
           <NavLink to="/About">About</NavLink>
           <NavLink to="/Blogposts">Blog</NavLink>
         </nav>
-
+        <Navbar articles={this.state.articles} />
         <Switch>
           <Route exact path="/Food/:slug">
             <Food posts={this.state.articles} />
