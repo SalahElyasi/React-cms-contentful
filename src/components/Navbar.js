@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import "./Navbar.css";
 import { IconContext } from "react-icons";
+import { HashLink } from "react-router-hash-link";
 
 const Navbar = ({ articles }) => {
   const [sidebar, setSidebar] = useState(false);
@@ -40,7 +41,9 @@ const Navbar = ({ articles }) => {
             {articles &&
               articles.map((article, index) => (
                 <li key={index} className="nav-text-link">
-                  <a href={`#${article.fields.slug}`}>{article.fields.name}</a>
+                  <HashLink to={`/#${article.fields.slug}`}>
+                    {article.fields.name}
+                  </HashLink>
                 </li>
               ))}
           </ul>
