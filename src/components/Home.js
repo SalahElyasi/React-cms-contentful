@@ -7,6 +7,8 @@ const Home = ({ articles, isLoading }) => {
   console.log(isLoading);
   return (
     <div className="App">
+
+
       <div className='ull'>
       <ul>
         {articles &&
@@ -17,6 +19,7 @@ const Home = ({ articles, isLoading }) => {
           ))}
       </ul>
       </div>
+
       <div className="container">
         <header>
           <div className="wrapper">
