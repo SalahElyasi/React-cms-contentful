@@ -7,6 +7,19 @@ const Home = ({ articles, isLoading }) => {
   console.log(isLoading);
   return (
     <div className="App">
+
+
+      <div className='ull'>
+      <ul>
+        {articles &&
+          articles.map((article, index) => (
+            <li className='lii' key={index}>
+              <a href={`#${article.fields.slug}`}>{article.fields.name}</a>
+            </li>
+          ))}
+      </ul>
+      </div>
+
       <div className="container">
         <header>
           <div className="wrapper">

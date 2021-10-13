@@ -15,6 +15,10 @@ import "./App.css";
 import { client } from "./Client";
 
 import Blogposts from "./components/Blogposts";
+import Footer from './components/Footer';
+
+
+
 
 class App extends React.Component {
   state = {
@@ -75,7 +79,9 @@ class App extends React.Component {
             />
           </Route>
         </Switch>
+        <Footer />
       </Router>
+       
     );
   }
 }
